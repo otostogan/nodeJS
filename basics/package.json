@@ -1,0 +1,18 @@
+{
+  "name": "basics",
+  "version": "1.0.0",
+  "description": "basics of nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "js"
+  ],
+  "author": "Sobeyy <otostogan@yandex.ru>",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
