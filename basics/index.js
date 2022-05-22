@@ -1,8 +1,19 @@
-// console.log('Hello', __dirname); // Путь до файла без данного файла 
-// console.log('Hello', __filename); //  Путь до файла с данным файлом 
+const http = require('http');
 
+const server = http.createServer((req,res)=>{
+    console.log(req.url);
 
-const userObg = require('./user');
+    res.write('<h1>Hello from nodeJS</h1>');
+    res.write('<h1>Hello from nodeJS</h1>');
+    res.write('<h1>Hello from nodeJS</h1>');
+    res.write('<h1>Hello from nodeJS</h1>');
+    res.end(`
+        <div style="background:red; width: 200px; height: 200px;">
+            <h1>Test</h1>
+        </div>
+    `);
+});
 
-
-console.log(userObg.sayHi());
+server.listen(3000, ()=>{
+    console.log('Server is running');
+});
