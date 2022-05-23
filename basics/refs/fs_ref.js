@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 // File system
 
-// fs.mkdirSync(path.join(__dirname, 'notes'), err =>{
+// fs.mkdir(path.join(__dirname, 'notes'), err =>{
 //     if(err) throw  err;
 
 //     console.log('Папка создана');
