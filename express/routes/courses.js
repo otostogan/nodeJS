@@ -14,6 +14,26 @@ router.get('/', async (req, res) => {
     })
 })
 
+router.post('/edit', async (req, res) => {
+    await Course.update(req.body);
+    res.redirect('/courses');
+})
+
+router.get('/:id/edit', async (req, res) => {
+
+    const course = await Course.getById(req.params.id);
+
+    if(!req.query.allow){
+        res.redirect('/');
+        return;
+    }
+
+    res.render('course-edit', {
+        title: `Редактирование курса ${course.title}`,
+        course
+    })
+})
+
 router.get('/:id', async (req, res) => {
     
     const course = await Course.getById(req.params.id);
