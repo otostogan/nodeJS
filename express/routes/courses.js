@@ -1,12 +1,16 @@
 const {Router} = require('express');
+const Course = require('../models/course');
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.status(200);
+router.get('/', async (req, res) => {
 
+    const courses = await Course.getAll();
+
+    res.status(200);
     res.render('courses', {
         title: 'Курсы',
         isCourses: true,
+        courses
     })
 })
 
