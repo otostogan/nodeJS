@@ -10,4 +10,10 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+    const {title, price, img} = req.body;
+
+    res.redirect('/courses');
+})
+
 module.exports = router;
