@@ -13,16 +13,33 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', 'views');
 
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', (req, res) => {
     res.status(200);
 
-    res.render('index')
+    res.render('index', {
+        title: 'Главная страница',
+        isHome: true,
+    })
 })
 
-app.get('/about', (req, res) => {
+app.get('/add', (req, res) => {
     res.status(200);
 
-    res.render('about')
+    res.render('add', {
+        title: 'Добавить курс',
+        isAdd: true,
+    })
+})
+
+app.get('/courses', (req, res) => {
+    res.status(200);
+
+    res.render('courses', {
+        title: 'Курсы',
+        isCourses: true,
+    })
 })
 
 
