@@ -27,11 +27,11 @@ app.set('views', 'views');
 
 app.use(async (req, res, next) => {
     try {
-      const user = await User.findById('62cd85522e13171767e6d4c1')
-      req.user = user
-      next()
+      const user = await User.findById('62cedecdb2f2af597bbc0f80');
+      req.user = user;
+      next();
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   })
 
@@ -60,7 +60,7 @@ async function start() {
             const user = new User({
                 email: 'otostogan@yandex.ru',
                 name: 'Alex',
-                card: {
+                cart: {
                     items: []
                 }
             });
